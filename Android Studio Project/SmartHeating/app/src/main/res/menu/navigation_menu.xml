@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Управление"
+        tools:ignore="HardcodedText">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/buttonManualControl"
+                    android:icon="@drawable/manual_control_icon"
+                    android:title="Ручное"
+                    tools:ignore="HardcodedText" />
+                <item
+                    android:id="@+id/buttonTimer"
+                    android:icon="@drawable/timer_icon"
+                    android:title="По таймеру"
+                    tools:ignore="HardcodedText" />
+                <item
+                    android:id="@+id/buttonTimeControl"
+                    android:icon="@drawable/time_icon"
+                    android:title="По времени"
+                    tools:ignore="HardcodedText" />
+                <item
+                    android:id="@+id/buttonTemperatureControl"
+                    android:icon="@drawable/temperature_icon"
+                    android:title="По температуре"
+                    tools:ignore="HardcodedText" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Пользователь"
+        tools:ignore="HardcodedText">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/buttonProfile"
+                    android:icon="@drawable/user_profile_icon"
+                    android:title="Профиль"
+                    tools:ignore="HardcodedText" />
+                <item
+                    android:id="@+id/buttonRegister"
+                    android:icon="@drawable/register_icon"
+                    android:title="Регистрация"
+                    tools:ignore="HardcodedText" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Настройки"
+        tools:ignore="HardcodedText">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/buttonNotifications"
+                    android:icon="@drawable/notifications_icon"
+                    android:title="Уведомления"
+                    tools:ignore="HardcodedText" />
+                <item
+                    android:id="@+id/buttonSettings"
+                    android:icon="@drawable/settings_icon"
+                    android:title="Настройки"
+                    tools:ignore="HardcodedText" />
+            </group>
+        </menu>
+    </item>
+</menu>

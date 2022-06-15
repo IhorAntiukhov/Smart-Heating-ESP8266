@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TimeControl">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:textColor="@color/main_color"
+        android:textColorHint="@color/main_color"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxStrokeColor="@color/second_color"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconTint="@color/second_color"
+        tools:ignore="HardcodedText">
+
+        <AutoCompleteTextView
+            android:id="@+id/inputTimeHeatingOrBoiler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Управление Котлом"
+            android:textColor="@color/main_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewHeating"
+        style="@style/ScrollbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="-5dp"
+        android:paddingStart="3dp"
+        android:paddingLeft="3dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="horizontal"
+        android:visibility="gone"
+        tools:ignore="RtlSymmetry">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHeatingTimestamps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/heating_recycler_view_item" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollViewBoiler"
+        style="@style/ScrollbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="-5dp"
+        android:paddingStart="3dp"
+        android:paddingLeft="3dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="horizontal"
+        android:visibility="gone"
+        tools:ignore="RtlSymmetry">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBoilerTimestamps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/boiler_recycler_view_item" />
+    </ScrollView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutHeatingElementsTime"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:textColor="@color/main_color"
+        android:textColorHint="@color/main_color"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxStrokeColor="@color/second_color"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconTint="@color/second_color"
+        tools:ignore="HardcodedText">
+
+        <AutoCompleteTextView
+            android:id="@+id/inputHeatingElementsTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Включить 1 тэн котла"
+            android:textColor="@color/main_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonAddTimestamp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="+ время включения"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonDeleteTimestamps"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="сбросить всё время"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStartTimeMode"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="запустить режим"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStopTimeMode"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="остановить режим"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+</LinearLayout>

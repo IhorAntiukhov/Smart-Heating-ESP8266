@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:textColor="@color/main_color"
+        android:textColorHint="@color/main_color"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxStrokeColor="@color/second_color"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconTint="@color/second_color"
+        tools:ignore="HardcodedText">
+
+        <AutoCompleteTextView
+            android:id="@+id/inputManualHeatingOrBoiler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Управление Котлом"
+            android:textColor="@color/main_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutHeatingElementsCount"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/labelHeatingElementsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/buttonUp"
+            android:layout_toLeftOf="@+id/buttonUp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="1sp"
+            android:autoSizeStepGranularity="0.5sp"
+            android:autoSizeTextType="uniform"
+            android:text="1 тэн"
+            android:textColor="@color/main_color"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+        <ImageButton
+            android:id="@+id/buttonDown"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28dp"
+            android:adjustViewBounds="true"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/arrow_down_blocked_icon"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+        <ImageButton
+            android:id="@+id/buttonUp"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:adjustViewBounds="true"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/arrow_up_icon"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonStartHeating"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="Запустить отопление"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStopHeating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="Остановить отопление"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStartBoiler"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="Запустить бойлер"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStopBoiler"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+
+        android:autoSizeMinTextSize="1sp"
+        android:autoSizeStepGranularity="0.5sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:text="Остановить бойлер"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+</LinearLayout>
